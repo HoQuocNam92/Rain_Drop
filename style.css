@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1b1b1b;
+
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cloud {
+    position: relative;
+    width: 300px;
+    background-color: #484f59;
+    height: 100px;
+    /* background-color: #fff; */
+    border-radius: 100px;
+    animation: slide 2s steps(1) infinite;
+}
+
+.container .cloud::before {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: #484f59;
+    border-radius: 50%;
+    top: -50px;
+    left: 50px;
+    box-shadow: 80px -10px 0 30px #484f59;
+
+}
+
+@keyframes slide {
+    0% {
+        filter: drop-shadow(8px 8px 0 #0001) brightness(1);
+    }
+
+    95% {
+        filter: drop-shadow(8px 8px 0 #0001) brightness(10);
+    }
+}
+
+.container .cloud::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #484f59;
+    border-radius: 100px;
+}
+
+.container .cloud .drop {
+    position: absolute;
+    top: 50px;
+    width: 5px;
+    height: 20px;
+    background-color: #245edd;
+    transform-origin: bottom;
+    animation: drop 1s infinite;
+}
+
+@keyframes drop {
+    0% {
+        transform: translateY(0) scaleY(1);
+    }
+
+    50% {
+        transform: translateY(360px) scaleY(1);
+    }
+
+    75% {
+        transform: translateY(360px) scaleY(0.2);
+    }
+
+    100% {
+        transform: translateY(360px) scaleY(0.2) scaleX(15);
+    }
+}
