@@ -65,10 +65,10 @@ body {
 
 .container .cloud .drop {
     position: absolute;
-    top: 50px;
+    top: 20px;
     width: 5px;
     height: 20px;
-    background-color: #245edd;
+    background-color: #05a2eb;
     transform-origin: bottom;
     animation: drop 1s infinite;
 }
